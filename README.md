@@ -3,6 +3,8 @@
 
 <img width="697" alt="2" src="https://github.com/user-attachments/assets/bb34075a-ec81-48d6-9fc4-71e17726b519">
 
+<img width="550" alt="3" src="https://github.com/user-attachments/assets/c6af92a5-af9b-4923-b50e-e7e10c0ad30d">
+
 
 ## 1/ Mise en place
 ### create venv 
