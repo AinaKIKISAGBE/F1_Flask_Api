@@ -258,10 +258,10 @@ Nginx et Gunicorn sont deux outils souvent utilisés ensemble pour déployer des
 ## 4. Utilisation Commune
 Dans un déploiement typique d'une application web Python, Nginx est utilisé comme serveur web devant Gunicorn. Voici comment ils interagissent :
 	•	Nginx reçoit les requêtes des clients (navigateur, API, etc.).
-	•	Il traite les requêtes statiques (fichiers HTML, CSS, etc.) directement.
-	•	Pour les requêtes dynamiques (API, pages générées par le serveur), Nginx les transmet à Gunicorn.
-	•	Gunicorn exécute l'application Python, traite la requête, et renvoie la réponse à Nginx.
-	•	Enfin, Nginx envoie la réponse finale au client.
+ 	•	Il traite les requêtes statiques (fichiers HTML, CSS, etc.) directement.
+  	•	Pour les requêtes dynamiques (API, pages générées par le serveur), Nginx les transmet à Gunicorn.
+      	•	Gunicorn exécute l'application Python, traite la requête, et renvoie la réponse à Nginx.
+       	•	Enfin, Nginx envoie la réponse finale au client.
 
 ## Conclusion
 En résumé, Nginx est principalement un serveur web et un reverse proxy, tandis que Gunicorn est un serveur d'applications qui exécute des applications Python. Ensemble, ils offrent une solution robuste pour le déploiement d'applications web modernes
