@@ -6,10 +6,11 @@
 ## 1/ Mise en place
 ### create venv 
 #### go to repository all venv 
+```
 	cd ~/Desktop/DevOps
 	mkdir venv_all
 	cd venv_all
-
+```
 #### create venv named "fask_venv"
 	python3 -m venv F1_Flask_Api_venv
 
