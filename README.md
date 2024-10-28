@@ -177,6 +177,7 @@ Pour des raisons de performance et de sécurité, il est recommandé de placer u
 	# git remote add origin https://github.com/AinaKIKISAGBE/F1_Flask_Api.git
 	source env.config
 	source keys.config
+ 	git remote remove origin
 	# git remote add origin https://your_token_github@github.com/AinaKIKISAGBE/venv_scoring.git
 	git remote add origin https://${GITHUB_TOKEN}@github.com/AinaKIKISAGBE/F1_Flask_Api.git
 	# git remote remove origin
