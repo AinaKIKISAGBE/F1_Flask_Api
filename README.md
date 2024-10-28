@@ -1,8 +1,7 @@
 # F1_Flask_Api
 
 
-<img width="550" alt="3" src="https://github.com/user-attachments/assets/c6af92a5-af9b-4923-b50e-e7e10c0ad30d">
-
+<img width="692" alt="3" src="https://github.com/user-attachments/assets/feb6bbd9-e407-4228-8f8f-3883769ea1b6">
 
 ## 1/ Mise en place
 ### create venv 
