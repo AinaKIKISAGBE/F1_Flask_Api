@@ -229,34 +229,39 @@ Pour des raisons de performance et de sécurité, il est recommandé de placer u
 
 # Différence entre Nginx et Gunicorn
 Nginx et Gunicorn sont deux outils souvent utilisés ensemble pour déployer des applications web, mais ils remplissent des rôles très différents dans le stack d'une application. 
-1. Rôle et Fonctionnalité
-•	Nginx :
-o	Type : Serveur web et reverse proxy.
-o	Fonction : Nginx est principalement utilisé pour servir des fichiers statiques (comme HTML, CSS, JavaScript, images, etc.) et pour agir comme un reverse proxy pour des applications en backend. Il gère également la répartition de charge, la gestion SSL, la mise en cache, et peut servir de point d'entrée pour les requêtes HTTP(S).
-o	Usage : Il est utilisé pour gérer la connexion entre les utilisateurs et les applications, permettant ainsi de déléguer la gestion des requêtes à des serveurs d'application comme Gunicorn.
-•	Gunicorn :
-o	Type : Serveur d'applications WSGI.
-o	Fonction : Gunicorn (Green Unicorn) est un serveur Python qui sert des applications conformes à l'interface WSGI (Web Server Gateway Interface). Il exécute des applications Python, en traitant les requêtes HTTP et en les envoyant à l'application pour traitement.
-o	Usage : Il est conçu pour exécuter des applications Python, comme celles développées avec Flask ou Django, et traite les requêtes générées par Nginx.
-2. Gestion des Requêtes
-•	Nginx :
-o	Nginx peut gérer un grand nombre de connexions simultanées et est particulièrement efficace pour les fichiers statiques.
-o	Il redirige les requêtes vers Gunicorn (ou un autre serveur d'application) pour le traitement des requêtes dynamiques.
-•	Gunicorn :
-o	Gunicorn crée plusieurs processus (workers) pour gérer les requêtes, permettant ainsi d'augmenter la capacité de traitement.
-o	Il est plus adapté pour gérer des requêtes dynamiques générées par des frameworks Python.
-3. Performances
-•	Nginx :
-o	Connu pour sa rapidité et son efficacité, en particulier lorsqu'il s'agit de servir des fichiers statiques.
-o	Il est optimisé pour gérer des milliers de connexions simultanées avec une faible consommation de ressources.
-•	Gunicorn :
-o	Bien qu'il soit performant pour exécuter des applications Python, il n'est pas conçu pour servir des fichiers statiques. Par conséquent, il est souvent combiné avec Nginx pour obtenir de meilleures performances.
-4. Utilisation Commune
+
+## 1. Rôle et Fonctionnalité
+	•	Nginx :
+		o	Type : Serveur web et reverse proxy.
+		o	Fonction : Nginx est principalement utilisé pour servir des fichiers statiques (comme HTML, CSS, JavaScript, images, etc.) et pour agir comme un reverse proxy pour des applications en backend. Il gère également la répartition de charge, la gestion SSL, la mise en cache, et peut servir de point d'entrée pour les requêtes HTTP(S).
+		o	Usage : Il est utilisé pour gérer la connexion entre les utilisateurs et les applications, permettant ainsi de déléguer la gestion des requêtes à des serveurs d'application comme Gunicorn.
+	•	Gunicorn :
+		o	Type : Serveur d'applications WSGI.
+		o	Fonction : Gunicorn (Green Unicorn) est un serveur Python qui sert des applications conformes à l'interface WSGI (Web Server Gateway Interface). Il exécute des applications Python, en traitant les requêtes HTTP et en les envoyant à l'application pour traitement.
+		o	Usage : Il est conçu pour exécuter des applications Python, comme celles développées avec Flask ou Django, et traite les requêtes générées par Nginx.
+
+## 2. Gestion des Requêtes
+	•	Nginx :
+		o	Nginx peut gérer un grand nombre de connexions simultanées et est particulièrement efficace pour les fichiers statiques.
+		o	Il redirige les requêtes vers Gunicorn (ou un autre serveur d'application) pour le traitement des requêtes dynamiques.
+	•	Gunicorn :
+		o	Gunicorn crée plusieurs processus (workers) pour gérer les requêtes, permettant ainsi d'augmenter la capacité de traitement.
+		o	Il est plus adapté pour gérer des requêtes dynamiques générées par des frameworks Python.
+
+## 3. Performances
+	•	Nginx :
+		o	Connu pour sa rapidité et son efficacité, en particulier lorsqu'il s'agit de servir des fichiers statiques.
+		o	Il est optimisé pour gérer des milliers de connexions simultanées avec une faible consommation de ressources.
+	•	Gunicorn :
+		o	Bien qu'il soit performant pour exécuter des applications Python, il n'est pas conçu pour servir des fichiers statiques. Par conséquent, il est souvent combiné avec Nginx pour obtenir de meilleures performances.
+
+## 4. Utilisation Commune
 Dans un déploiement typique d'une application web Python, Nginx est utilisé comme serveur web devant Gunicorn. Voici comment ils interagissent :
-1.	Nginx reçoit les requêtes des clients (navigateur, API, etc.).
-2.	Il traite les requêtes statiques (fichiers HTML, CSS, etc.) directement.
-3.	Pour les requêtes dynamiques (API, pages générées par le serveur), Nginx les transmet à Gunicorn.
-4.	Gunicorn exécute l'application Python, traite la requête, et renvoie la réponse à Nginx.
-5.	Enfin, Nginx envoie la réponse finale au client.
-Conclusion
+	1.	Nginx reçoit les requêtes des clients (navigateur, API, etc.).
+	2.	Il traite les requêtes statiques (fichiers HTML, CSS, etc.) directement.
+	3.	Pour les requêtes dynamiques (API, pages générées par le serveur), Nginx les transmet à Gunicorn.
+	4.	Gunicorn exécute l'application Python, traite la requête, et renvoie la réponse à Nginx.
+	5.	Enfin, Nginx envoie la réponse finale au client.
+
+## Conclusion
 En résumé, Nginx est principalement un serveur web et un reverse proxy, tandis que Gunicorn est un serveur d'applications qui exécute des applications Python. Ensemble, ils offrent une solution robuste pour le déploiement d'applications web modernes
