@@ -222,6 +222,13 @@ Pour des raisons de performance et de sécurité, il est recommandé de placer u
 	git branch
 
 
+### release tag 
+	git tag v1
+	git push origin v1
+
+### clone release 
+	git clone --branch v1 https://github.com/AinaKIKISAGBE/F1_Flask_Api
+	Public.git
 
 
 
