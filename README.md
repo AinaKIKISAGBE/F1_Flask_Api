@@ -231,7 +231,7 @@ Pour des raisons de performance et de sécurité, il est recommandé de placer u
 ### clone release (toutes les branche) au moment ou le tag v1 a été appliqué sur une des branche (master dans notre cas)
 	git clone --branch v1 --single-branch  https://github.com/AinaKIKISAGBE/F1_Flask_Api.git
 
-### clone release uniquement la branche qui a été tagué v1 (ca donnera le contenu de la master quans elle a été tagué v1)
+### clone release uniquement la branche qui a été tagué v1 (sera cloné uniquement le contenu de la branche qui a été tagué v1, ici ca sera uniquement le contenu de la branche master au moment ou il a été tagué v1 )
 	git clone --branch v1 --single-branch  https://github.com/AinaKIKISAGBE/F1_Flask_Api.git
 
 
