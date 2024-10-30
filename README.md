@@ -223,12 +223,19 @@ Pour des raisons de performance et de sécurité, il est recommandé de placer u
 
 
 ### release tag 
-	git tag v1
+	# git tag v1
+	git push origin master
+	git tag -a v1 -m "First release version 1"
 	git push origin v1
 
-### clone release 
-	git clone --branch v1 https://github.com/AinaKIKISAGBE/F1_Flask_Api
-	Public.git
+### clone release (toutes les branche) au moment ou le tag v1 a été appliqué sur une des branche (master dans notre cas)
+	git clone --branch v1 --single-branch  https://github.com/AinaKIKISAGBE/F1_Flask_Api.git
+
+### clone release uniquement la branche qui a été tagué v1 (ca donnera le contenu de la master quans elle a été tagué v1)
+	git clone --branch v1 --single-branch  https://github.com/AinaKIKISAGBE/F1_Flask_Api.git
+
+
+
 
 
 
