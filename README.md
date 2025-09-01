@@ -171,6 +171,8 @@ Pour des raisons de performance et de sécurité, il est recommandé de placer u
 	echo git config --global user.name "AinaKIKISAGBE" >> env.config
 	echo git config --global user.email "aina.kiki.sagbe@gmail.com" >> env.config
 	echo "env.config" >> .gitignore
+	git config --global user.name "AinaKIKISAGBE"
+	git config --global user.email "aina.kiki.sagbe@gmail.com"
 
 
 	git init
